@@ -12,7 +12,7 @@ app.use(express.static('public/'));
 
 
 app.use('/', farmRouter)
-app.use('/badges', farmAdminRouter)
+app.use('/admin', farmAdminRouter)
 
 
 app.listen(port, ()=> {
