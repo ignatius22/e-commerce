@@ -1,16 +1,17 @@
-import express from 'express'
-var exphbs  = require('express-handlebars');
+import express from 'express';
+import exphbs  from 'express-handlebars';
+import farmRouter from './route/farmRouter'
 const app = express()
 
 const port = 3000;
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+app.use(express.static('public/'));
 
 
-app.get('/', function (req, res) {
-    res.render('home');
-});
+app.use('/', farmRouter)
+
 
 
 app.listen(port, ()=> {
