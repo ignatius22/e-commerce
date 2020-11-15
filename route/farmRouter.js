@@ -23,6 +23,11 @@ router.get('/cart',(req, res)=> {
     res.render('cart');
 });
 
+router.get('/checkout',(req, res)=> {
+    res.render('checkout');
+});
+
+
 router.get('/login',(req, res) =>{
     res.render('login');
 });
@@ -54,6 +59,47 @@ router.get('/blog-sidebar',(req, res) =>{
 
 router.get('/shop',(req, res) =>{
     res.render('shop');
+});
+
+router.get('/shop-list',(req, res) =>{
+    res.render('shop-list');
+});
+
+router.get('/shop-fullwidth',(req, res) =>{
+    res.render('shop-fullwidth');
+});
+
+router.get('/shop-fullwidth-list',(req, res) =>{
+    res.render('shop-fullwidth-list');
+});
+
+router.get('/shop-right-sidebar',(req, res) =>{
+    res.render('shop-right-sidebar');
+});
+
+router.get('/product-details',(req, res) =>{
+    res.render('product-details');
+});
+
+router.get('/product-grouped',(req, res) =>{
+    res.render('product-grouped');
+});
+
+router.get('/product-sidebar',(req, res) =>{
+    res.render('product-sidebar');
+});
+
+
+router.get('/my-account',(req, res) =>{
+    res.render('my-account');
+});
+
+router.get('/wishlist',(req, res) =>{
+    res.render('wishlist');
+});
+
+router.get('/variable-product',(req, res) =>{
+    res.render('variable-product');
 });
 
 export default router;
