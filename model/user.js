@@ -1,14 +1,36 @@
-import mongoose from 'mongoose'
+const { boolean } = require('joi');
+const mongoose = require('mongoose');
 
-const user = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
-  email: String,
-  password: String,
-  userType: String,
-  createdAt: String
-});
+const UserSchema = new mongoose.Schema(
+  {
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
 
+    userType: {
+      type: String,
+    },
+    isVerified: {
+      type: boolean,
+      default: false,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-
-export default user;
+module.exports = mongoose.model('User', UserSchema);
